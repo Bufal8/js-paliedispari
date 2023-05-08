@@ -30,29 +30,30 @@ console.log(`La somma dei due numeri è ${sommaNumeri}`);
 
 // se somma numeri è uguale a scelta utente ho vinto
 function sommaNumeriPariDispari(){
-    // Stabilisco se la somma dei numeri è pari o dispari
+    // Stabilisco se la somma dei numeri è pari 
+    let isPari;
     if(sommaNumeri % 2 === 0 ){
-        let numeroPari = sommaNumeri;
+        isPari = true;
     }
     else{
-        let numeroDispari = sommaNumeri;
+        isPari = false;
     }
 
-    if(numeroPari && sceltaUtente === 'pari'){
-        return vittoriaPartita;
+    // Confronto la natura del numero (P o D) con la scelta dell'utente
+    if(isPari == true && sceltaUtente === 'pari'){
+        return vittoriaPartita = true;
     }
-    // else if(numeroPari && sceltaUtente === 'dispari'){
-    //     return sconfittaPartita;
-    // }
-    // else if(numeroDispari && sceltaUtente === 'pari'){
-    //     return sconfittaPartita;
-    // }
-    else if(numeroDispari && sceltaUtente === 'dispari'){
-        return vittoriaPartita;
+    else if(isPari == false && sceltaUtente === 'dispari'){
+        return vittoriaPartita = true;
+    }
+    else{
+        return vittoriaPartita = false;
     }
 }
 
-if(vittoriaPartita){
+sommaNumeriPariDispari();
+
+if(vittoriaPartita == true){
     console.log('Complimenti hai vinto!');
 }
 else{
